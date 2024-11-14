@@ -1,0 +1,31 @@
+{
+    "editor.formatOnSave": true,                     // Formato automático al guardar
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "files.autoSave": "off",                         // Guardado manual para evitar conflictos de compilación
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "prettier.singleQuote": true,                    // Comillas simples por convención en TypeScript
+    "prettier.tabWidth": 2,
+    "prettier.trailingComma": "all",
+    "prettier.arrowParens": "avoid",
+    "editor.tabSize": 2,                             // Tamaño de tabulación de dos espacios
+    "cSpell.language": "en,es",                      // Revisión de ortografía en inglés y español
+    "files.associations": {
+      "*.component.html": "html",
+      "*.component.ts": "typescript",
+      "*.component.scss": "scss"
+    },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html"
+    ],
+    "angular.enable-strict-mode-prompt": true,
+    "prettier.useEditorConfig": true // Sugerencia para usar modo estricto en Angular 12+
+  }
+  

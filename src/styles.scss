@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importa el tema de PrimeNG */
+@import "primeng/resources/themes/saga-blue/theme.css";
+
+/* Importa los estilos de PrimeNG */
+@import "primeng/resources/primeng.min.css";
+
+/* Importa los iconos de PrimeIcons */
+@import "primeicons/primeicons.css";
+
+@import "primeflex/primeflex.css"

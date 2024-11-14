@@ -1,0 +1,87 @@
+<h1>Clientes</h1>
+
+<div [formGroup]="form" class="formgroup-inline">
+  <pre>{{ form.value | json }}</pre>
+  <div class="field">
+    <label for="nombre" class="p-sr-only">Nombre</label>
+    <input
+      formControlName="nombre"
+      id="nombre"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+      placeholder="nombre"
+    />
+  </div>
+  <div class="field">
+    <label for="direccion" class="p-sr-only">Dirección</label>
+    <input
+      formControlName="direccion"
+      id="direccion"
+      type="text"
+      class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+      placeholder="direccion"
+    />
+  </div>
+  <button
+    [disabled]="form.invalid"
+    (click)="add()"
+    type="button"
+    class="bg-primary border-primary-500 px-3 py-2 text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700"
+  >
+    Submit
+  </button>
+  <!-- <div class="card flex justify-content-center">
+    <p-button label="Submit" />
+  </div> -->
+</div>
+
+<pre> clientes: {{ clientes }}</pre>
+
+<div class="card">
+  <p-table [value]="clientes" [tableStyle]="{ 'max-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-cliente>
+      <tr>
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.direccion }}</td>
+        <td>{{ cliente.telefono }}</td>
+        <td><span class="pi pi-trash" (click)="delete(cliente)"></span></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<h4>Clientes</h4>
+<div class="card flex justify-content-right">
+  <span id="lb">Options</span>
+
+  <p-listbox
+    ariaLabelledBy="lb"
+    [options]="clientes"
+    [(ngModel)]="selectedCliente"
+    optionLabel="nombre"
+    [style]="{ width: '15rem' }"
+    [listStyle]="{ 'max-height': '220px' }"
+  />
+</div>
+
+<div class="card flex justify-content-center">
+  <p-sidebar [(visible)]="sidebarVisible">
+    <h3>Sidebar</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </p-sidebar>
+  <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right" />
+</div>
